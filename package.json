@@ -1,0 +1,22 @@
+{
+  "name": "ehappy",
+  "version": "1.0.0",
+  "description": "Desktop happiness client",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puterstructions/ehappy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puterstructions/ehappy/issues"
+  },
+  "homepage": "https://github.com/puterstructions/ehappy#readme",
+  "dependencies": {
+    "electron": "^1.4.7"
+  }
+}
