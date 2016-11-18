@@ -1,5 +1,5 @@
 const {app, Menu, Tray} = require('electron')
-const notifier = require('node-nodifier')
+const notifier = require('node-notifier')
 
 let tray = null
 
