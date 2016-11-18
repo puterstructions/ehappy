@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/puterstructions/ehappy#readme",
   "dependencies": {
-    "electron": "^1.4.7"
+    "electron": "^1.4.7",
+    "node-notifier": "^4.6.1"
   }
 }
