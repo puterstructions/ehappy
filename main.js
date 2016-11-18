@@ -3,7 +3,7 @@ const notifier = require('node-notifier')
 
 let tray = null
 
-const createTray = () => {
+function createTray() {
   tray = new Tray('tray-icon.png')
   const contextMenu = Menu.buildFromTemplate([
     {label: 'Enterprise Happiness', type: 'normal'},
