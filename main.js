@@ -6,7 +6,8 @@ let tray = null
 const createTray = () => {
   tray = new Tray('tray-icon.png')
   const contextMenu = Menu.buildFromTemplate([
-    {label: 'Enterprise Happiness', type: 'normal'}
+    {label: 'Enterprise Happiness', type: 'normal'},
+    {label: 'Quit', type: 'normal', click: () => { app.exit() }}
   ])
   tray.setToolTip('Enterprise Happiness')
   tray.setContextMenu(contextMenu)
