@@ -1,5 +1,5 @@
-const {app, Menu, Tray} = require('electron')
-const notifier = require('node-notifier')
+const {app, BrowserWindow, Menu, Tray, ipcMain} = require('electron')
+const console = require('console')
 
 let tray = null
 
@@ -13,10 +13,33 @@ function createTray() {
   tray.setContextMenu(contextMenu)
 }
 
+let notificationWindow = null
+
+function createNotificationWindow() {
+  notificationWindow = new BrowserWindow({
+    alwaysOnTop:true,
+    frame:false,
+    fullscreenable:false,
+    maximizable:false,
+    minimizable:false,
+    movable:false,
+    show:false,
+    resizable:false,
+    useContentSize:true,
+    width: 450,
+    height: 200
+  })
+  notificationWindow.loadURL(`file://${__dirname}/pages/notification.html`)
+  notificationWindow.on('ready-to-show', () => { notificationWindow.show() })
+}
+
 app.on('ready', () => {
   createTray()
-  notifier.notify({
-    title: 'Enterprise happiness',
-    message: 'Would you recommend your employer to a friend?'
-  })
+  createNotificationWindow()
+})
+
+ipcMain.on('ehappy-answer', (e, q, a) => {
+  console.log(q)
+  console.log(a)
+  notificationWindow.hide()
 })
