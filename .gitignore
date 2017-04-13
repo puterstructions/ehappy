@@ -64,3 +64,5 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user*
 ehappy
+moc_predefs.h
+systray
